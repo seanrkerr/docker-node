@@ -14,5 +14,11 @@ export default function() {
 		});
 	});
 
+	api.get('/test', (req, res) => {
+		res.json({
+		version : '1.2'
+		});
+	});
+
 	return api;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Docker-node",
+  "name": "express",
   "version": "0.2.2",
-  "description": "Starter project for an ES6 RESTful Express API with docker",
+  "description": "Starter project for an ES6 RESTful Express API + docker",
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/seanrkerr/docker-node.git"
+    "url": ""
   },
-  "author": "Sean Kerr",
+  "author": "sean kerr",
   "license": "Proprietary",
   "dependencies": {
     "body-parser": "^1.13.3",
