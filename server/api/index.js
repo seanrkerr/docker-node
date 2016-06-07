@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import facets from './facets';
+import { CRSF } from '../../node_modules/csurf';
 
 export default function() {
 	var api = Router();
@@ -10,7 +11,7 @@ export default function() {
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
 		res.json({
-			version : '1.0'
+			version : '1.0000'
 		});
 	});
 
