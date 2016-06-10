@@ -1,7 +1,7 @@
 {
-  "name": "express",
+  "name": "express-es6-rest-api",
   "version": "0.2.2",
-  "description": "Starter project for an ES6 RESTful Express API + docker",
+  "description": "Starter project for an ES6 RESTful Express API",
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
@@ -9,14 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git://github.com/developit/express-es6-rest-api.git"
   },
-  "author": "sean kerr",
+  "author": "Jason Miller <jason@developit.ca>",
   "license": "Proprietary",
   "dependencies": {
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.7.1",
+    "csurf": "^1.9.0",
     "express": "^4.13.3",
     "resource-router-middleware": "^0.5.1"
   },
