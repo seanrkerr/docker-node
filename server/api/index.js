@@ -1,24 +1,29 @@
 import { Router } from 'express';
 import facets from './facets';
-import { CRSF } from '../../node_modules/csurf';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import csurf from 'csurf';
+
 
 export default function() {
+
+	let csrfProtection = csurf({ cookie: true })
+	let parseForm = bodyParser.urlencoded({ extended: false })
+
 	var api = Router();
 
 	// mount the facets resource
 	api.use('/facets', facets);
 
-	// perhaps expose some API metadata at the root
-	api.get('/', (req, res) => {
-		res.json({
-			version : '1.0000'
-		});
-	});
+	api.use(cookieParser());
 
-	api.get('/test', (req, res) => {
+	// perhaps expose some API metadata at the root
+	api.get('/', csrfProtection, (req, res) => {
 		res.json({
-		version : '1.2'
+			csrfToken : req.csrfToken()
 		});
+
+		//res.render('send', { csrfToken: req.csrfToken() });
 	});
 
 	return api;
