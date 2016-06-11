@@ -40,7 +40,7 @@ eval "$(docker-machine env node-test)"
 
 ```
 
-##mount the volume, add ssh keys and init with node 6
+##mount the volume, add ssh keys and init with node 6 (basically mounts a folder and installs node from the bash)
 
 ```
 docker run --rm -ti -v /Users/you/.ssh/mykey_rsa:/root/.ssh/id_rsa -v /Users/you/myfolder/node-test:/code -p 8080:8080 node:6.2 bash
